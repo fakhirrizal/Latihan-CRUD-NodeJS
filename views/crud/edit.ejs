@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Edit Data</title>
+    </head>
+    <body>
+        <div class="row">
+            <form action="/crud/update" method="POST">
+                <table border='1'>
+                    <input type="hidden" name="id" value="<%= datane[0].id %>">
+                    <tr>
+                        <th>Nama</th>
+                        <td><input type="text" name="nama" value="<%= datane[0].name %>" required></td>
+                    </tr>
+                    <tr>
+                        <th>Negara</th>
+                        <td><input type="text" name="negara" value="<%= datane[0].country %>" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" value='Perbarui'></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<table border='1'>
+    <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>Negara</th>
+        <th colspan="2">Action</th>
+    </tr>
+    <% for(var i=0; i< datane.length; i++){ %>
+    <tr>
+        <td><%= datane[i].id %></td>
+        <td><%= datane[i].name %></td>
+        <td><%= datane[i].country %></td>
+        <td><a href="/crud/edit/<%= datane[i].id%>">EDIT</a></td>
+        <td><a href="/crud/delete/<%= datane[i].id%>">DELETE</a></td>
+    </tr>
+    <% } %>
+</table>
+<a href="/crud/insert">INSERT</a>
