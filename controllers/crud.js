@@ -27,7 +27,7 @@ app.get('/insert', function(req, res){
 
 app.post('/save', function(req, res){
 	let query  = 'INSERT INTO sample_data VALUES ("","'+req.body.nama+'","'+req.body.negara+'")';
-	con.query(query,function(err,rows){
+	con.query(query,function(err){
 		res.redirect('/crud');
 	})
 })
@@ -35,14 +35,22 @@ app.post('/save', function(req, res){
 app.get('/edit/:id',function(req,res){
     let par =  req.params;
     let query =  `SELECT * FROM sample_data WHERE id=${par['id']}`;
-    con.query(query,function(err,rows,field){
+    con.query(query,function(err,rows){
         res.render('crud/edit',{datane:rows});
     })
 })
 
 app.post('/update',function(req,res){
     let query = 'UPDATE sample_data SET name="'+req.body.nama+'",country="'+req.body.negara+'" WHERE id="'+req.body.id+'"';
-    con.query(query,function(err,rows,field){
+    con.query(query,function(err){
+        res.redirect('/crud');
+    })
+})
+
+app.get('/delete/:id',function(req,res){
+    let par =  req.params;
+    let query =  `DELETE FROM sample_data WHERE id=${par['id']}`;
+    con.query(query,function(err){
         res.redirect('/crud');
     })
 })
