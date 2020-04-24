@@ -2,6 +2,7 @@ const express = require('express')
 const app = express.Router(); // biar bisa jadi router
 const bodyParser = require('body-parser');  // extract the entire tag <body>, pakenya req.body
                                             // parses the JSON, buffer, string and URL encoded data submitted using HTTP POST request.
+                                            // passport js
 
 // app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
